@@ -1,0 +1,70 @@
+/* Navbar styles */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    margin-left: 0; /* Reset logo margin */
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+.navbar-menu {
+    display: flex; /* Default display for medium and larger screens */
+    flex-direction: row; /* Row direction for medium screens */
+}
+
+.navbar-menu.is-active {
+    display: flex; /* Show the menu when active */
+    flex-direction: column; /* Stack items vertically on mobile */
+    position: absolute; /* Position the menu */
+    top: 100%; /* Position below the navbar */
+    left: 0; /* Align left */
+    width: 100%; /* Full width */
+    background-color: white; /* Match navbar background */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.navbar-item {
+    padding: 1rem; /* Item padding */
+    color: darkslateblue; /* Item color */
+}
+
+.navbar-burger {
+    display: none; /* Hidden by default */
+    height: 40px;
+}
+
+.navbar-burger span {
+    background-color: darkslateblue; /* Burger icon color */
+    margin: 5px auto; /* Spacing between lines */
+    height: 2px; /* Line thickness */
+    width: 25px; /* Line width */
+    transition: all 0.3s; /* Smooth transition */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Hide the menu by default on mobile */
+    }
+
+    .navbar-burger {
+        display: flex; /* Show burger icon on mobile */
+    }
+
+    .navbar-burger.is-active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px); /* Rotate the first line */
+    }
+
+    .navbar-burger.is-active span:nth-child(2) {
+        opacity: 0; /* Hide the middle line */
+    }
+
+    .navbar-burger.is-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px); /* Rotate the last line */
+    }
+}
